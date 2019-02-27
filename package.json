@@ -2,7 +2,12 @@
   "name": "url-shortener",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deathrollru/url-shortener.git"
+  },
   "dependencies": {
+    "express": "^4.16.4",
     "node": "^11.10.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
