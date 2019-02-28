@@ -7,7 +7,6 @@
     "url": "git+https://github.com/deathrollru/url-shortener.git"
   },
   "dependencies": {
-    "express": "^4.16.4",
     "node": "^11.10.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -19,9 +18,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -29,6 +25,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint": "^5.14.1"
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }
