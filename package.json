@@ -21,6 +21,7 @@
     "webpack": "^4.29.6"
   },
   "devDependencies": {
+    "supertest": "^3.4.2",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   },
