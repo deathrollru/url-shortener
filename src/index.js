@@ -1,20 +1,28 @@
+/*
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
+*/
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import Express from 'express';
+const app = new Express();
 
-// const express = require('express');
-// const app = express();
-// const port = 3000;
-//
-// app.get('/', (req, res) => res.send('Hello World!'));
-//
-// app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.get('/:id', (req, res) => {
+    const { id } = req.params;
+    res.send('Hello World! Id is' + id);
+});
+
+app.post('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+    console.log('Example app listening on port 3000!');
+});

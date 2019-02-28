@@ -2,31 +2,32 @@
   "name": "url-shortener",
   "version": "0.1.0",
   "private": true,
+  "author": "deathroll",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/deathrollru/url-shortener.git"
   },
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
   "dependencies": {
+    "express": "^4.16.4",
     "node": "^11.10.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "webpack": "^4.29.6"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.16.0"
-  }
+  ]
 }
