@@ -21,6 +21,8 @@
     "node": "^11.10.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "shortid": "^2.2.14",
+    "valid-url": "^1.0.9",
     "webpack": "^4.29.6"
   },
   "devDependencies": {
