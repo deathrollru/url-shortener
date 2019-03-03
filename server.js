@@ -1,28 +1,27 @@
-const express = require('express');
-const MongoClient = require('mongodb').MongoClient;
-const bodyParser = require('body-parser');
-const db = require('./config/db');
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import dbConfig from './config/db';
+import { CreateShortUrl, getOriginalUrl } from './controllers/urls';
+
 const app = express();
 const port = 8000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+mongoose.connect(dbConfig.url, { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
 
-MongoClient.connect(db.url, (err) => {
-    if (err) return console.log(err);
-    app.get('/', (req, res) => {
-        res.send('Hello World!');
-    });
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+    next();
+});
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-    app.get('/:id', (req, res) => {
-        const { id } = req.params;
-        res.send('Hello World! Id is' + id);
-    });
+app.post('/', CreateShortUrl);
 
-    app.post('/', (req, res) => {
-        res.send('Hello World!');
-    });
+app.get('/:hash', getOriginalUrl);
 
-    app.listen(port, () => {
-        console.log('Example app listening on port ' + port);
-    });
+app.listen(port, () => {
+    console.log('App listening on port ' + port);
 });
