@@ -54,3 +54,16 @@
   background-color: #61dafb;
   cursor: pointer;
 }
+.user-urls {
+  background: #5adafd;
+  width: 100%;
+  padding: 2px 23px;
+  font-family: proxima-nova,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  color: #7f898e;
+  line-height: 32px;
+  border-radius: 3px;
+  border-width: 0;
+  box-shadow: 0 0 0 1px #5adafd;
+}
